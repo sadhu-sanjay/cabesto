@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import Button from "./button";
 
 const TabButton = ({
   title = "Delete",
@@ -17,25 +18,7 @@ const TabButton = ({
   isDisabled?: boolean;
   isActive?: boolean;
 }) => {
-  return (
-    <>
-      <button
-        className={`inline-flex items-center justify-center text-xs font-semibold 
-          disabled:opacity-50 hover:bg-secondary/80  bg-gray-200 text-black 
-          rounded-4px px-3 py-2
-          ${
-            isActive
-              ? "dark:text-gray-900 shadow-md outline-none bg-white "
-              : "dark:text-gray-400 bg-white dark:bg-gray-800"
-          }
-           dark:hover:bg-secondary/80 dark:text-gray-200`}
-        disabled={isDisabled}
-        onClick={onClick}
-      >
-        {title}
-      </button>
-    </>
-  );
+  return <Button className="border-2 border-zinc-600" isActive={isActive} title={title} isDisabled={isDisabled} onClick={onClick} />;
 };
 
 export default TabButton;

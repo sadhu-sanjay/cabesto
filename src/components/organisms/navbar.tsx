@@ -22,12 +22,12 @@ export const Navbar: React.FC<NavBarProps> = ({
 
   return (
     <div
-      className={`h-full w-full shadow-2xl hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 p-12 min-w-[300px] ${className}`}
+      className={`h-full w-full shadow-2xl hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 p-8 min-w-[300px] ${className}`}
     >
       {/* Side Conatiner */}
-      <div className="flex flex-col gap-8 justify-between h-full">
+      <div className="flex flex-col gap-8 justify-between h-full ">
         {/* Logo */}
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center py-4">
           <a className="flex items-center gap-2 font-semibold" href="#">
             {/* <Image alt="..." src="" width={30} height={30} /> */}
             <p className="text-4xl font-extrabold">
