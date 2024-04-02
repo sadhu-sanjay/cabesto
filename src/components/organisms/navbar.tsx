@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { NavItem } from "~/models/types";
+import { NavItem, NavSection } from "~/models/types";
 
 type NavBarProps = {
   title?: string;
@@ -22,12 +22,12 @@ export const Navbar: React.FC<NavBarProps> = ({
 
   return (
     <div
-      className={`shadow-2xl hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 p-8 ${className}`}
+      className={`h-full w-full shadow-2xl hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 p-12 min-w-[300px] ${className}`}
     >
       {/* Side Conatiner */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-8 justify-between h-full">
         {/* Logo */}
-        <div className="flex h-[60px] items-center justify-center py-12">
+        <div className="flex items-center justify-center ">
           <a className="flex items-center gap-2 font-semibold" href="#">
             {/* <Image alt="..." src="" width={30} height={30} /> */}
             <p className="text-4xl font-extrabold">
@@ -40,35 +40,45 @@ export const Navbar: React.FC<NavBarProps> = ({
         </div>
 
         <div className="flex-1">
-          <nav className="grid items-start text-sm font-medium gap-2">
+          {/* Nav Section */}
+          <nav className="grid items-start text-sm font-medium p-2 ">
             {/* Nav Items */}
-            {items.map((item: NavItem) => {
+            {items.map((section: NavSection) => {
               return (
-                <Link
-                  key={item.id}
-                  className={` flex items-center gap-3 rounded-lg p-3 text-gray-700 transition-all 
+                <>
+                  <div className="grid items-start text-sm font-medium ">
+                    {section.navItems?.map((item: NavItem) => {
+                      return (
+                        <Link
+                          key={item.id}
+                          className={` flex items-center gap-3 rounded-lg p-3 text-gray-700 transition-all 
                   font-bold hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
                     selected === item.id
                       ? " bg-yellow-200 dark:bg-gray-800 dark:text-gray-50 text-gray-900 scale-105"
                       : ""
                   }`}
-                  href={`/${item.path}`}
-                  onClick={() => {
-                    setSelected(item.id);
-                  }}
-                >
-                  {item.icon}
-                  {item.label}
-                  {item.badge && (
-                    <div
-                      className=" bg-gray-600 dark:bg-gray-50
+                          href={`/${item.path}`}
+                          onClick={() => {
+                            setSelected(item.id);
+                          }}
+                        >
+                          {item.icon}
+                          {item.label}
+                          {item.badge && (
+                            <div
+                              className=" bg-gray-600 dark:bg-gray-50
                      text-gray-100 dark:text-gray-600
                     border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full "
-                    >
-                      {item.badge}
-                    </div>
-                  )}
-                </Link>
+                            >
+                              {item.badge}
+                            </div>
+                          )}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  <div className="my-4 border border-zinc-300 " />
+                </>
               );
             })}
           </nav>

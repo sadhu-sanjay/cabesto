@@ -6,58 +6,73 @@ import IconSettings from "~/icons/icon-settings";
 import IconUsers from "~/icons/icon-users";
 import LoadingCircle from "~/icons/loading-circle";
 
-import { NavItem } from "~/models/types";
+import { NavItem, NavSection } from "~/models/types";
 
-export const navData: NavItem[] = [
+export const navData: NavSection[] = [
   {
     id: "1",
-    label: "Personalization",
+    label: "Section1",
     path: "personalization",
     icon: <DocTextIcon />,
+    navItems: [
+      {
+        id: "1",
+        label: "Personalization",
+        path: "personalization",
+        icon: <DocTextIcon />,
+      },
+      {
+        id: "2",
+        label: "Integration",
+        path: "personalization",
+        icon: <IconUsers />,
+      },
+      {
+        id: "3",
+        label: "Statistics",
+        path: "personalization",
+        icon: <IconSettings />,
+      },
+      {
+        id: "4",
+        label: "Moderation",
+        path: "personalization",
+        icon: <BoxIcon />,
+      },
+    ],
   },
   {
     id: "2",
-    label: "Profile",
-    path: "dashboard",
+    label: "Section2",
+    path: "personalization",
     icon: <IconUsers />,
-  },
-  {
-    id: "3",
-    label: "Settings",
-    path: "dashboard",
-    icon: <IconSettings />,
-  },
-  {
-    id: "4",
-    label: "Products",
-    path: "dashboard",
-    icon: <BoxIcon />,
-  },
-  {
-    id: "5",
-    label: "Orders",
-    path: "orders",
-    icon: <CartIcon />,
-    badge: "50",
-  },
-  {
-    id: "6",
-    label: "Proposals",
-    path: "dashboard",
-    icon: <DocTextIcon />,
-    badge: "21",
-  },
-  {
-    id: "7",
-    label: "Customers",
-    path: "dashboard",
-    icon: <IconUsers />,
-  },
-  {
-    id: "8",
-    label: "Analytics",
-    path: "dashboard",
-    icon: <LoadingCircle />,
+    navItems: [
+      {
+        id: "4",
+        label: "Abonnement",
+        path: "personalization",
+        icon: <CartIcon />,
+        badge: "49",
+      },
+      {
+        id: "5",
+        label: "Proposals",
+        path: "dashboard",
+        icon: <DocTextIcon />,
+        badge: "20",
+      },
+      {
+        id: "6",
+        label: "Customers",
+        path: "dashboard",
+        icon: <IconUsers />,
+      },
+      {
+        id: "7",
+        label: "Analytics",
+        path: "dashboard",
+        icon: <LoadingCircle />,
+      },
+    ],
   },
 ];
-

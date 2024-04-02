@@ -8,6 +8,15 @@ export type NavItem = {
     badge?: string;
 };
 
+export type NavSection = {
+    id: string;
+    label: string;
+    path: string;
+    icon?: ReactElement;
+    badge?: string;
+    navItems?: Array<NavItem>;
+};
+
 export type SortConfig = {
     key: string;
     direction: string;
