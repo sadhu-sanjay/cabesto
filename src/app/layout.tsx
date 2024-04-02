@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CABESTO & VOUS",
-  description: "BackOffice ",
+  description: "Cabesto | Magasin de pêche, plongée, randonnée, piscine ",
 };
 
 export default function RootLayout({
