@@ -30,3 +30,9 @@ export type Record = {
     address: string;
     description: string;
 };
+
+export type TabItem = {
+  label: string;
+  value: string;
+  count?: number;
+};

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { NavItem, NavSection } from "~/models/types";
 
 type NavBarProps = {
@@ -18,7 +18,7 @@ export const Navbar: React.FC<NavBarProps> = ({
   children,
   items,
 }) => {
-  const [selected, setSelected] = useState<Array<number>>([0,0])
+  const [selected, setSelected] = useState<Array<number>>([0, 0]);
 
   return (
     <div
@@ -40,45 +40,45 @@ export const Navbar: React.FC<NavBarProps> = ({
         </div>
 
         <div className="flex-1">
-          {/* Nav Section */}
           <nav className="grid items-start text-sm font-medium p-2 ">
-            {/* Nav Items */}
             {items.map((section: NavSection, sectionIndex: number) => {
               return (
-                <>
+                <Fragment key={section.id}>
                   <div className="grid items-start text-sm font-medium ">
-                    {section.navItems?.map((item: NavItem, itemIndex: number) => {
-                      return (
-                        <Link
-                          key={item.id}
-                          className={` flex items-center gap-3 rounded-lg p-3 text-gray-700 transition-all 
+                    {section.navItems?.map(
+                      (item: NavItem, itemIndex: number) => {
+                        return (
+                          <Link
+                            key={item.id}
+                            className={` flex items-center gap-3 rounded-md p-3 text-gray-700 transition-all 
                   font-bold hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
-                    (sectionIndex === selected[0] && itemIndex === selected[1])
-                      ? " bg-yellow-200 dark:bg-gray-800 dark:text-gray-50 text-gray-900 scale-105"
+                    sectionIndex === selected[0] && itemIndex === selected[1]
+                      ? "bg-yellow-200 dark:bg-gray-800 dark:text-gray-50 text-gray-900 scale-105"
                       : ""
                   }`}
-                          href={`/${item.path}`}
-                          onClick={() => {
-                            setSelected([sectionIndex, itemIndex])
-                          }}
-                        >
-                          {item.icon}
-                          {item.label}
-                          {item.badge && (
-                            <div
-                              className=" bg-gray-600 dark:bg-gray-50
+                            href={`/${item.path}`}
+                            onClick={() => {
+                              setSelected([sectionIndex, itemIndex]);
+                            }}
+                          >
+                            {item.icon}
+                            {item.label}
+                            {item.badge && (
+                              <div
+                                className=" bg-gray-600 dark:bg-gray-50
                      text-gray-100 dark:text-gray-600
                     border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full "
-                            >
-                              {item.badge}
-                            </div>
-                          )}
-                        </Link>
-                      );
-                    })}
+                              >
+                                {item.badge}
+                              </div>
+                            )}
+                          </Link>
+                        );
+                      }
+                    )}
                   </div>
                   <div className="my-4 border border-zinc-300 " />
-                </>
+                  </Fragment>
               );
             })}
           </nav>

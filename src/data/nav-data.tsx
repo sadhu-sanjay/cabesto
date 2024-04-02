@@ -25,7 +25,7 @@ export const navData: NavSection[] = [
       {
         id: "2",
         label: "Integration",
-        path: "personalization",
+        path: "integration",
         icon: <IconUsers />,
       },
       {
