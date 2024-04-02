@@ -20,6 +20,7 @@ export const navData: NavSection[] = [
         label: "Personalization",
         path: "personalization",
         icon: <DocTextIcon />,
+        badge: "49",
       },
       {
         id: "2",
@@ -32,6 +33,7 @@ export const navData: NavSection[] = [
         label: "Statistics",
         path: "personalization",
         icon: <IconSettings />,
+        badge: "20",
       },
       {
         id: "4",
@@ -48,31 +50,17 @@ export const navData: NavSection[] = [
     icon: <IconUsers />,
     navItems: [
       {
-        id: "4",
+        id: "1",
         label: "Abonnement",
         path: "personalization",
         icon: <CartIcon />,
-        badge: "49",
       },
       {
-        id: "5",
-        label: "Proposals",
+        id: "2",
+        label: "Parameters",
         path: "dashboard",
         icon: <DocTextIcon />,
-        badge: "20",
-      },
-      {
-        id: "6",
-        label: "Customers",
-        path: "dashboard",
-        icon: <IconUsers />,
-      },
-      {
-        id: "7",
-        label: "Analytics",
-        path: "dashboard",
-        icon: <LoadingCircle />,
-      },
+      }
     ],
   },
 ];

@@ -18,7 +18,7 @@ export const Navbar: React.FC<NavBarProps> = ({
   children,
   items,
 }) => {
-  const [selected, setSelected] = useState<string>("1");
+  const [selected, setSelected] = useState<Array<number>>([0,0])
 
   return (
     <div
@@ -43,23 +43,23 @@ export const Navbar: React.FC<NavBarProps> = ({
           {/* Nav Section */}
           <nav className="grid items-start text-sm font-medium p-2 ">
             {/* Nav Items */}
-            {items.map((section: NavSection) => {
+            {items.map((section: NavSection, sectionIndex: number) => {
               return (
                 <>
                   <div className="grid items-start text-sm font-medium ">
-                    {section.navItems?.map((item: NavItem) => {
+                    {section.navItems?.map((item: NavItem, itemIndex: number) => {
                       return (
                         <Link
                           key={item.id}
                           className={` flex items-center gap-3 rounded-lg p-3 text-gray-700 transition-all 
                   font-bold hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
-                    selected === item.id
+                    (sectionIndex === selected[0] && itemIndex === selected[1])
                       ? " bg-yellow-200 dark:bg-gray-800 dark:text-gray-50 text-gray-900 scale-105"
                       : ""
                   }`}
                           href={`/${item.path}`}
                           onClick={() => {
-                            setSelected(item.id);
+                            setSelected([sectionIndex, itemIndex])
                           }}
                         >
                           {item.icon}
