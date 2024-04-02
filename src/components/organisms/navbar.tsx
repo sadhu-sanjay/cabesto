@@ -18,12 +18,11 @@ export const Navbar: React.FC<NavBarProps> = ({
   children,
   items,
 }) => {
-  const [selected, setSelected] = useState<string>("6");
+  const [selected, setSelected] = useState<string>("1");
 
   return (
     <div
-      className={`hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 p-4
-    ${className}`}
+      className={`shadow-2xl hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 p-8 ${className}`}
     >
       {/* Side Conatiner */}
       <div className="flex flex-col gap-2">
@@ -31,19 +30,24 @@ export const Navbar: React.FC<NavBarProps> = ({
         <div className="flex h-[60px] items-center justify-center py-12">
           <a className="flex items-center gap-2 font-semibold" href="#">
             {/* <Image alt="..." src="" width={30} height={30} /> */}
-            <span className=" font-extrabold text-4xl">contestio</span>
+            <p className="text-4xl font-extrabold">
+              contestio
+              <span className=" font-extrabold text-4xl text-yellow-300">
+                .
+              </span>
+            </p>
           </a>
         </div>
 
         <div className="flex-1">
-          <nav className="grid items-start px-4 text-sm font-medium">
+          <nav className="grid items-start text-sm font-medium gap-2">
             {/* Nav Items */}
             {items.map((item: NavItem) => {
               return (
                 <Link
                   key={item.id}
-                  className={` flex items-center gap-3 rounded-lg p-3 text-gray-500 transition-all 
-                  hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
+                  className={` flex items-center gap-3 rounded-lg p-3 text-gray-700 transition-all 
+                  font-bold hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
                     selected === item.id
                       ? " bg-yellow-200 dark:bg-gray-800 dark:text-gray-50 text-gray-900 scale-105"
                       : ""
@@ -68,6 +72,9 @@ export const Navbar: React.FC<NavBarProps> = ({
               );
             })}
           </nav>
+        </div>
+        <div>
+          <h1>Log Out</h1>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export const navData: NavItem[] = [
     id: "1",
     label: "Personalization",
     path: "personalization",
-    icon: <IconHome />,
+    icon: <DocTextIcon />,
   },
   {
     id: "2",
