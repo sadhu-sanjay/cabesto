@@ -1,5 +1,6 @@
 import BoxIcon from "~/icons/box-icon";
 import CartIcon from "~/icons/cart-icon";
+import { CertIcon } from "~/icons/cert-icon";
 import DocTextIcon from "~/icons/doctext-icon";
 import IconSettings from "~/icons/icon-settings";
 import IconUsers from "~/icons/icon-users";
@@ -55,13 +56,13 @@ export const navData: NavSection[] = [
         id: "1",
         label: "Abonnement",
         path: "personalization",
-        icon: <CartIcon />,
+        icon: <CertIcon />,
       },
       {
         id: "2",
         label: "Parameters",
         path: "dashboard",
-        icon: <DocTextIcon />,
+        icon: <IconSettings />,
       }
     ],
   },
