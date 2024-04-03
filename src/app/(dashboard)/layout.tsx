@@ -13,9 +13,9 @@ export default function DashboardLayout({children}: {children: React.ReactNode})
                 onAvatarClick={() => setShowSignInModal(true)}
               /> */}
               <main className="rounded-4px flex flex-1 flex-col p-4 md:px-24 overflow-hidden shadow-sm border ">
-                <div className="rounded-4px subContainer border shadow-sm overflow-auto">
+                {/* <div className="rounded-4px subContainer border shadow-sm overflow-auto"> */}
                   {children}
-                </div>
+                {/* </div> */}
               </main>
             </div>
           </div>

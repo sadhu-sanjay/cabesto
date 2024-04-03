@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavBarProps> = ({
             {items.map((section: NavSection, sectionIndex: number) => {
               return (
                 <Fragment key={section.id}>
-                  <div className="grid items-start text-sm font-medium ">
+                  <div className="grid gap-1 items-start text-sm font-medium ">
                     {section.navItems?.map(
                       (item: NavItem, itemIndex: number) => {
                         return (
