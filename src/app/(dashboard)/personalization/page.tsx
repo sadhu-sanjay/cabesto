@@ -1,9 +1,8 @@
-'use client'
+"use client";
 import { useState } from "react";
 import Tabs from "~/components/molecules/tab";
 import { UploadIcon } from "~/icons/upload-icon";
 import { TabItem } from "~/models/types";
-
 
 export default function Page() {
   const items: Array<TabItem> = [
@@ -25,16 +24,39 @@ export default function Page() {
           setActiveTab(item);
         }}
       />
-      <div className="w-full border-2 border-zinc-200 rounded">
-        <h1 className="border mt-4 mx-4 border-zinc-200 rounded p-2 ">
-          Telecharge Votre Logo*
-        </h1>
-        <div className="m-4 justify-center grid border py-16 gap-4">
-          <UploadIcon className="w-8 h-8" />
-          <div>Sanjay</div>
-          <div>Goswami</div>
+      <main className="grid gap-8">
+        {/* upload image component */}
+        <div className="w-full shadow-md border-2 border-zinc-200 rounded">
+          <h1 className="border text-xl font-extrabold mt-4 mx-4 border-zinc-200 rounded p-4 ">
+            Telechargez votre logo*
+          </h1>
+          <div className="m-4 justify-center items-center flex flex-col py-16 gap-4">
+            <UploadIcon className="w-8 h-8" />
+            <h1 className="font-semibold border-2 border-zinc-500 p-3 rounded">
+              Importer le fichier .png
+            </h1>
+            <p className="text-sm font-mono text-zinc-400 ">
+              Taile recommandee 600X400px
+            </p>
+          </div>
         </div>
-      </div>
+        {/* Navigation Personilazition Compoennt */}
+        <div className="w-full shadow-md border-2 border-zinc-200 rounded">
+          <h1 className="border text-xl font-extrabold mt-4 mx-4 border-zinc-200 rounded p-4 ">
+            Telechargez votre logo*
+          </h1>
+          <div className="m-4 justify-center items-center flex flex-col py-16 gap-4">
+            <UploadIcon className="w-8 h-8" />
+            <h1 className="font-semibold border-2 border-zinc-500 p-3 rounded">
+              Importer le fichier .png
+            </h1>
+            <p className="text-sm font-mono text-zinc-400 ">
+              Taile recommandee 600X400px
+            </p>
+          </div>
+        </div>
+        
+      </main>
     </div>
   );
 }

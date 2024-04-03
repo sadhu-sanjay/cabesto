@@ -12,7 +12,7 @@ export default function DashboardLayout({children}: {children: React.ReactNode})
                 onSubmit={() => console.log("search")}
                 onAvatarClick={() => setShowSignInModal(true)}
               /> */}
-              <main className="rounded-4px flex flex-1 flex-col p-4 md:px-24 overflow-hidden shadow-sm border ">
+              <main className="rounded-4px flex flex-1 flex-col px-4 md:px-24 overflow-hidden shadow-sm border ">
                 {/* <div className="rounded-4px subContainer border shadow-sm overflow-auto"> */}
                   {children}
                 {/* </div> */}
