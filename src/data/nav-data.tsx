@@ -1,10 +1,12 @@
 import BoxIcon from "~/icons/box-icon";
 import CartIcon from "~/icons/cart-icon";
 import DocTextIcon from "~/icons/doctext-icon";
-import IconHome from "~/icons/icon-home";
 import IconSettings from "~/icons/icon-settings";
 import IconUsers from "~/icons/icon-users";
-import LoadingCircle from "~/icons/loading-circle";
+import { NoteIcon } from "~/icons/note-icon";
+import { ShareIcon } from "~/icons/share-icon";
+import { ShieldIcon } from "~/icons/shield-icon";
+import { StatIcon } from "~/icons/stat-icon";
 
 import { NavItem, NavSection } from "~/models/types";
 
@@ -19,27 +21,27 @@ export const navData: NavSection[] = [
         id: "1",
         label: "Personalization",
         path: "personalization",
-        icon: <DocTextIcon />,
+        icon: <NoteIcon />,
         badge: "49",
       },
       {
         id: "2",
         label: "Integration",
         path: "integration",
-        icon: <IconUsers />,
+        icon: <ShareIcon />,
       },
       {
         id: "3",
         label: "Statistics",
         path: "personalization",
-        icon: <IconSettings />,
+        icon: <StatIcon />,
         badge: "20",
       },
       {
         id: "4",
         label: "Moderation",
         path: "personalization",
-        icon: <BoxIcon />,
+        icon: <ShieldIcon />,
       },
     ],
   },
